@@ -1,0 +1,110 @@
+body {
+  font-family: courier;
+}
+
+/*
+ =========================================
+  Select Mode Button
+ =========================================
+*/
+#mode-button {
+  margin-top: 20px;
+}
+
+#mode-button button {
+  border: 0;
+  margin: 0 20px;
+  font-size: 25px;
+  color: white;
+}
+
+button#tutorial-button {
+  background-color: DeepSkyBlue;
+}
+
+button#free-button {
+  background-color: Orange;
+}
+
+/*
+ =========================================
+  Tutorial Side Bar
+ =========================================
+*/
+.side-bar {
+  position: absolute;
+  visibility: hidden;
+  font-weight: 700;
+  color: gray;
+}
+
+.side-bar > ul > li {
+  list-style: none;
+  margin-left: -20px;
+}
+
+ul.tutorial-commands {
+  list-style: none;
+  margin-left: -40px;
+}
+
+
+/*
+ =========================================
+  Console Area
+ =========================================
+*/
+
+#console-screen {
+  background-color: #031340;
+  border: gray solid 5px;;
+  height: 600px;
+  margin: 30px 100px;
+  overflow: auto;
+  position: relative;
+  white-space: pre;
+}
+
+/*
+ =========================================
+  Result Area(console)
+ =========================================
+*/
+#responseArea {
+  bottom: 40px;
+  position: absolute;
+  color: #A0C5E8;
+  font-size: 20px;
+  width: 100%;
+  word-wrap:break-word;
+}
+
+p.no-margin {
+    margin: 0;
+}
+
+/*
+ =========================================
+  Input Area(console)
+ =========================================
+*/
+#inputArea {
+  bottom: 0;
+  position: absolute;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+}
+
+#inputBox {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 95%;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+}
