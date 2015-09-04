@@ -21,8 +21,8 @@ var Title = React.createClass(
                 logo: {
                      width: '60px',
                      position: 'absolute',
-                     //top: '5px',
-                     top: '10px',
+                     top: '5px',
+                     //top: '10px',
                 },
             };
             return (
