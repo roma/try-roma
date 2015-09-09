@@ -86,7 +86,8 @@ function sendAjax(action, data, url, format) {
     var response = '';
 
     $.ajax({
-        url: "../"+path,
+        //url: "../"+path,
+        url: "/tryroma/"+path,
         type: action,
         data: data,
         dataType: format,

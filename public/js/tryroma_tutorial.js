@@ -147,7 +147,7 @@ function getCommandExplanation() {
         "Next is a data adding command.<br>" +
         "This command is similar to set command,<br>" +
         "but add command set the data unless specified key is already exist.<br>" +
-        "<br><br>Next, try add to Non exist data.<br>" +
+        "<br>Next, try add to Non exist data.<br>" +
         "<br>Please input below command and push Enter key.<br>> add hoge 0 0 4" + 
         "<br>Please input below command and push Enter key.<br>> fuga",
 

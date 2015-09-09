@@ -77,6 +77,7 @@ ul.tutorial-commands {
   font-size: 20px;
   width: 100%;
   word-wrap:break-word;
+  line-height: 1.05;
 }
 
 p.no-margin {

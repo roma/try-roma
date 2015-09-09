@@ -3,7 +3,7 @@
  * ===================================================================================================================== */
 var Title = React.createClass(
     {displayName: "Title",
-        componentWillMount() {
+        componentWillMount:function() {
             window.sessionStorage.removeItem(['requireNext']);
             window.sessionStorage.removeItem(['lastcmd']);
         },
@@ -21,14 +21,15 @@ var Title = React.createClass(
                 logo: {
                      width: '60px',
                      position: 'absolute',
-                     //top: '5px',
-                     top: '10px',
+                     //top: '10px',
+                     top: '5px',
                 },
             };
             return (
                 React.createElement("div", {style: style.title}, 
                   React.createElement("center", {style: style.center}, 
-                    "Try R", React.createElement("img", {src: "../img/ROMA.png", id: "title-image", style: style.logo}), " MA"
+                    /*Try R<img src="../img/ROMA.png" id='title-image' style={style.logo} />&emsp;MA*/
+                    "Try R", React.createElement("img", {src: "/tryroma/img/ROMA.png", id: "title-image", style: style.logo}), " MA"
                   )
                 )
             );
@@ -38,12 +39,12 @@ var Title = React.createClass(
 
 var SelectModeButton = React.createClass(
     {displayName: "SelectModeButton",
-        getInitialState() {
+        getInitialState:function() {
             return{
                 mode: null,
             };
         },
-        selectMode(e) {
+        selectMode:function(e) {
             if (e.target.name == 'tutorial') {
                 $('#console-screen').animate({'margin-left':'220px', 'margin-right':'20px'}, 500);
                 $('.side-bar').css({'visibility':'visible'});
@@ -136,13 +137,13 @@ var TutorialSideBar = React.createClass(
 
 var Input = React.createClass(
     {displayName: "Input",
-        getDefaultProps() {
+        getDefaultProps:function() {
             return {
                 ENTER: 13,
                 placeholder: 'please select mode',
             };
         },
-        getInitialState() {
+        getInitialState:function() {
             return {
                 res: "",
                 downNodeMsg: "",
@@ -157,15 +158,15 @@ var Input = React.createClass(
                 nextCmd: '',
             };
         },
-        componentDidMount() {
+        componentDidMount:function() {
             $("#inputBox").prop("disabled", true);
         },
-        componentWillReceiveProps(nextProps) {
+        componentWillReceiveProps:function(nextProps) {
             this.setState({placeholder: 'Please input command'});
             $("#inputBox").prop("disabled", false);
             this.refs.command.getDOMNode().focus();
         },
-        sendCommand(e) {
+        sendCommand:function(e) {
             if(e.keyCode == this.props.ENTER){
                 // Free mode
                 if (this.props.mode == 'free') {
@@ -255,7 +256,7 @@ var Input = React.createClass(
 
 var FirstHeader = React.createClass(
     {displayName: "FirstHeader",
-        getDefaultProps() {
+        getDefaultProps:function() {
             return {
                 greetingAA: heardoc_main(),
                 greetingMessage: 'Please select mode!',
@@ -287,13 +288,13 @@ var FirstHeader = React.createClass(
 
 var FreeHeader = React.createClass(
     {displayName: "FreeHeader",
-        getDefaultProps() {
+        getDefaultProps:function() {
             return {
                 greetingAA: heardoc_free(),
                 greetingMessage: 'Please feel free to execute ROMA command!!',
             };
         },
-        getInitialState() {
+        getInitialState:function() {
             return {
                 greetingAA: this.props.greetingAA,
                 greetingMessage: this.props.greetingMessage,
@@ -301,7 +302,7 @@ var FreeHeader = React.createClass(
                 greenMsg: '',
             };
         },
-        componentWillReceiveProps(nextProps) {
+        componentWillReceiveProps:function(nextProps) {
             clearHeader.bind(this)();
             this.setState({redMsg: nextProps.nodeMsg['nonActive']});
             this.setState({greenMsg: nextProps.nodeMsg['active']});
@@ -345,7 +346,7 @@ var FreeHeader = React.createClass(
 
 var TutorialHeader = React.createClass(
     {displayName: "TutorialHeader",
-        getInitialState() {
+        getInitialState:function() {
             return {
                 greetingAA: heardoc_tutorial(),
                 greetingMessage: "This mode is tutorial of ROMA basic usage.<br>This mode explain ROMA command one by one.<br><br>Let's start tutorial!!<br>Please push Enter Key ",
@@ -353,7 +354,7 @@ var TutorialHeader = React.createClass(
                 explain: '',
             };
         },
-        componentWillReceiveProps(nextProps) {
+        componentWillReceiveProps:function(nextProps) {
             clearHeader.bind(this)();
             this.setState({explain: nextProps.explain});
             this.setState({cmd: nextProps.cmd});
@@ -403,12 +404,12 @@ var TutorialHeader = React.createClass(
 
 var FreeResult = React.createClass(
     {displayName: "FreeResult",
-        getInitialState() {
+        getInitialState:function() {
             return {
                 response: '',
             };
         },
-        componentWillReceiveProps(nextProps) {
+        componentWillReceiveProps:function(nextProps) {
             if (nextProps.response.lastIndexOf('BYE') == -1) {
                 this.setState({response: this.state.response + '<br>' + nextProps.response});
             } else {
@@ -427,12 +428,12 @@ var FreeResult = React.createClass(
 
 var TutorialResult = React.createClass(
     {displayName: "TutorialResult",
-        getDefaultProps() {
+        getDefaultProps:function() {
             return {
                 nextGuidance: '',
             }
         },
-        getInitialState() {
+        getInitialState:function() {
             return {
                 response: '',
             };
