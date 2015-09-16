@@ -64,5 +64,5 @@ This mode explain the ROMA basic commands as a interactive.
 Contributions, improvements, comments and suggestions are welcome.  
 Our HP below.  
 ROMA HP :[http://roma-kvs.org/](http://roma-kvs.org/)  
-ROMA HP(Virtual Console) : [http://roma-kvs.org/tryroma/](http://roma-kvs.org/tryroma/)  
+ROMA HP(Virtual Console) : [http://roma-kvs.org/tryroma](http://roma-kvs.org/tryroma)  
 
