@@ -6,7 +6,7 @@ module Roma
 
     def get_stat
       ret = {}
-      ret['version'] = '1.2.0'
+      ret['version'] = '1.3.0'
       ret
     end
 
