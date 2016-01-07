@@ -21,15 +21,15 @@ var Title = React.createClass(
                 logo: {
                      width: '60px',
                      position: 'absolute',
-                     //top: '10px',
-                     top: '5px',
+                     top: '10px',
+                     //top: '5px',
                 },
             };
             return (
                 React.createElement("div", {style: style.title}, 
                   React.createElement("center", {style: style.center}, 
-                    /*Try R<img src="../img/ROMA.png" id='title-image' style={style.logo} />&emsp;MA*/
-                    "Try R", React.createElement("img", {src: "/tryroma/img/ROMA.png", id: "title-image", style: style.logo}), " MA"
+                    "Try R", React.createElement("img", {src: "../img/ROMA.png", id: "title-image", style: style.logo}), " MA"
+                    /*Try R<img src="/tryroma/img/ROMA.png" id='title-image' style={style.logo} />&emsp;MA*/
                   )
                 )
             );
