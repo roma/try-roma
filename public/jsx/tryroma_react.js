@@ -21,13 +21,15 @@ var Title = React.createClass(
                 logo: {
                      width: '60px',
                      position: 'absolute',
-                     top: '5px',
+                     top: '10px',
+                     //top: '5px',
                 },
             };
             return (
                 <div style={style.title}>
                   <center style={style.center}>
                     Try R<img src="../img/ROMA.png" id='title-image' style={style.logo} />&emsp;MA
+                    {/*Try R<img src="/tryroma/img/ROMA.png" id='title-image' style={style.logo} />&emsp;MA*/}
                   </center>
                 </div>
             );
@@ -266,8 +268,9 @@ var FirstHeader = React.createClass(
                     color: '#00cede',
                 },
                 greetingAA: {
-                    fontSize: '12px',
-                    fontFamily: 'courier'
+                    fontSize: '14px',
+                    fontFamily: 'courier',
+                    fontWeight: 'bold',
                 },
                 greetingMsg: {
                     fontSize: '26px',
@@ -312,7 +315,8 @@ var FreeHeader = React.createClass(
                 },
                 greetingAA: {
                     fontSize: '20px',
-                    fontFamily: 'courier'
+                    fontFamily: 'courier',
+                    fontWeight: 'bold',
                 },
                 greetingMsg: {
                     fontSize: '26px',
@@ -368,6 +372,7 @@ var TutorialHeader = React.createClass(
                 greetingAA: {
                     fontSize: '20px',
                     fontFamily: 'courier',
+                    fontWeight: 'bold',
                 },
                 greetingMsg: {
                     fontSize: '25px',

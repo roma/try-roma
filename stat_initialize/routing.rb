@@ -28,7 +28,7 @@ module Roma
         @auto_recover_status="waiting"
         @auto_recover_time=1800
         @event = []
-        @version_of_nodes = {"localhost_10001"=>66048, "localhost_10002"=>66048, "localhost_10003"=>66048, "localhost_10004"=>66048, "localhost_10005"=>66048}
+        @version_of_nodes = {"localhost_10001"=>66304, "localhost_10002"=>66304, "localhost_10003"=>66304, "localhost_10004"=>66304, "localhost_10005"=>66304}
       end
 
       def get_stat()

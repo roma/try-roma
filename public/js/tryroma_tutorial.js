@@ -147,7 +147,7 @@ function getCommandExplanation() {
         "Next is a data adding command.<br>" +
         "This command is similar to set command,<br>" +
         "but add command set the data unless specified key is already exist.<br>" +
-        "<br><br>Next, try add to Non exist data.<br>" +
+        "<br>Next, try add to Non exist data.<br>" +
         "<br>Please input below command and push Enter key.<br>> add hoge 0 0 4" + 
         "<br>Please input below command and push Enter key.<br>> fuga",
 
@@ -335,20 +335,22 @@ function getCommandResult() {
 }
 
 function changeSideBarColor(nextCommand) {
+    // first stage(Check Status/Manage Data/Instance shutdown/Recover redundancy/STOR ROMA)
     if (nextCommand == 'set foo 0 0 3') {
-        $('#side-bar > ul > li:nth-of-type(1)').css({'color':'gray'});
-        $('#side-bar > ul > li:nth-of-type(2)').css({'color':'red'});
+        $('.side-bar > ul > li:nth-of-type(1)').css({'color':'gray'});
+        $('.side-bar > ul > li:nth-of-type(2)').css({'color':'red'});
     } else if (nextCommand == 'stat primary|secondary') {
-        $('#side-bar > ul > li:nth-of-type(2)').css({'color':'gray'});
-        $('#side-bar > ul > li:nth-of-type(3)').css({'color':'red'});
-    } else if (nextCommand == 'recover') {
-        $('#side-bar > ul > li:nth-of-type(3)').css({'color':'gray'});
-        $('#side-bar > ul > li:nth-of-type(4)').css({'color':'red'});
+        $('.side-bar > ul > li:nth-of-type(2)').css({'color':'gray'});
+        $('.side-bar > ul > li:nth-of-type(3)').css({'color':'red'});
+    } else if (nextCommand == 'shutdown_self1') {
+        $('.side-bar > ul > li:nth-of-type(3)').css({'color':'gray'});
+        $('.side-bar > ul > li:nth-of-type(4)').css({'color':'red'});
     } else if (nextCommand == 'balse') {
-        $('#side-bar > ul > li:nth-of-type(4)').css({'color':'gray'});
-        $('#side-bar > ul > li:nth-of-type(5)').css({'color':'red'});
+        $('.side-bar > ul > li:nth-of-type(4)').css({'color':'gray'});
+        $('.side-bar > ul > li:nth-of-type(5)').css({'color':'red'});
     }
 
+    // second stage(each commands)
     if (nextCommand == 'stats') {
         $('#stats').css({'color':'red'});
     } else if (nextCommand == 'nodelist1') {
