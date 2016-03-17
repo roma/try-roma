@@ -3,7 +3,7 @@
  * ===================================================================================================================== */
 function heardoc_free() {
     var heredoc = (function () {/*
- _____                _____ _____ ____  _____ 
+ _____                _____ _____ ____  _____
 |   __|___ ___ ___   |     |     |    \|   __|
 |   __|  _| -_| -_|  | | | |  |  |  |  |   __|
 |__|  |_| |___|___|  |_|_|_|_____|____/|_____|
@@ -74,7 +74,7 @@ function checkSecondValue(cmd) {
             break;
 
     }
-    
+
     window.sessionStorage.removeItem(['requireNext']);
     clearForm.bind(this)();
 
@@ -87,7 +87,7 @@ function sendAjax(action, data, url, format) {
 
     $.ajax({
         //url: "../"+path,
-        url: "/tryroma/"+path,
+        url: "/"+path,
         type: action,
         data: data,
         dataType: format,
@@ -96,7 +96,7 @@ function sendAjax(action, data, url, format) {
     }).done(function(res){
         if (action == 'PUT') {
           res = changeStyleToHash(res);
-        } 
+        }
         if (format == 'json') {
             res = refactorStatResult(res);
         }
@@ -120,7 +120,7 @@ function sendRomaCommand(cmd, tutorialMode) {
         } else if (/^(whoami|nodelist|version)$/.test(cmd)) {
             var url = RegExp.$1;
 
-        } else if (/^(get|gets)\s(.+)$/.test(cmd)) { 
+        } else if (/^(get|gets)\s(.+)$/.test(cmd)) {
             var url = RegExp.$1+"/"+RegExp.$2;
         } else {
             var res = showResult.bind(this)('<br>Argument Error<br>');
@@ -170,7 +170,7 @@ function sendRomaCommand(cmd, tutorialMode) {
         var action = 'DELETE';
         var firstCmd = RegExp.$1;
         data = { command: firstCmd, confirmation: null };
-        
+
         if (/^(balse|shutdown|shutdown_self)$/.test(firstCmd)) {
             window.sessionStorage.setItem(['requireNext'],[true]);
         }
