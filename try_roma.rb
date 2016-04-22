@@ -53,7 +53,7 @@ get %r{/stat[s]{0,1}/?(.*)?} do |regexp|
            .merge(session[:routing].get_stat)\
            .merge(session[:connection].get_stat)\
            .merge(session[:others].get_stat)
- 
+
   h = all_list.select{|k, v| k =~ /#{regexp}/}
   h.each{|k, v|
     h[k] = v.to_s
@@ -98,7 +98,7 @@ delete '/' do
   cmd = params[:command]
   confirm = params[:confirmation]
 
-  unless cmd.empty?  
+  unless cmd.empty?
     if res = Roma::FinishCommand.new.list[cmd]
       if confirm == 'yes'
         case cmd
@@ -157,7 +157,7 @@ post '/' do
         @res = "EXISTS"
       end
 
-    when /^(incr|decr)$/ 
+    when /^(incr|decr)$/
       raise TryRomaAPIArgumentError unless argumentcheck(k, digit)
       if !digit.kind_of?(Integer)
         if digit =~ /^(\d+).+/
@@ -235,14 +235,14 @@ put '/' do
 
             # debug
             if run_pri || run_sec1 || run_sec2
-              logger.info "primary:    #{session[:routing].primary}" 
+              logger.info "primary:    #{session[:routing].primary}"
               logger.info "secondary1: #{session[:routing].secondary1}"
               logger.info "secondary2: #{session[:routing].secondary2}"
             end
             break if !run_pri && !run_sec1 && !run_sec2
             sleep 2
           }
-         
+
         rescue => e
           logger.info e
         ensure
@@ -277,13 +277,13 @@ put '/' do
 
             # debug
             if run_short
-              logger.info "short_vnodes:    #{session[:routing].short_vnodes}" 
+              logger.info "short_vnodes:    #{session[:routing].short_vnodes}"
             end
             break if !run_short
 
             sleep 2
           }
- 
+
         rescue => e
           logger.info e
         ensure
@@ -377,7 +377,7 @@ def make_response_of_nodelist(res)
   node_list.each{|k, v|
     node_list[k] = res
   }
-  node_list 
+  node_list
 end
 
 def kill_instance(type)
@@ -434,7 +434,7 @@ def can_i_set?(command, key)
 end
 
 def set_data(cmd, key, value, exptime=(10 * 60), val_size=nil)
-  exptime = check_exp_time(exptime) 
+  exptime = check_exp_time(exptime)
 
   if cmd =~ /^(set_expt|incr|decr)$/
     value_hash = value
@@ -481,7 +481,7 @@ def value_setting(cmd, k, v, val_size)
     h =  {'value' => value, 'clk' => 0 }
   end
 
-  return h 
+  return h
 end
 
 def revert_hash_from_string(str)
@@ -499,4 +499,3 @@ def revert_hash_from_string(str)
 
   Hash[*str]
 end
-
