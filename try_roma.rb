@@ -7,7 +7,7 @@ include TryRomaAPI
 
 configure do
   use Rack::Session::Pool, :expire_after => 3600 # 10min
-  set :public, File.dirname(__FILE__) + '/public'
+  set :public_folder, File.dirname(__FILE__) + '/public'
 end
 
 helpers do
